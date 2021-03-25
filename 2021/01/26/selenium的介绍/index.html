@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>selenium的介绍 | Greenfish&#39;s Little Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="selenium的介绍知识点： 了解 selenium的工作原理 了解 selenium以及chromedriver的安装 掌握 标签对象click点击以及send_keys输入   1. selenium运行效果展示 Selenium是一个Web的自动化测试工具，最初是为网站自动化测试而开发的，Selenium 可以直接调用浏览器，它支持所有主流的浏览器（包括PhantomJS这些无界面的浏览器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="selenium的介绍">
+<meta property="og:url" content="https://tmh.qpedu.cf/blog/2021/01/26/selenium%E7%9A%84%E4%BB%8B%E7%BB%8D/index.html">
+<meta property="og:site_name" content="Greenfish&#39;s Little Blog">
+<meta property="og:description" content="selenium的介绍知识点： 了解 selenium的工作原理 了解 selenium以及chromedriver的安装 掌握 标签对象click点击以及send_keys输入   1. selenium运行效果展示 Selenium是一个Web的自动化测试工具，最初是为网站自动化测试而开发的，Selenium 可以直接调用浏览器，它支持所有主流的浏览器（包括PhantomJS这些无界面的浏览器">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tmh.qpedu.cf/blog/2021/01/26/selenium%E7%9A%84%E4%BB%8B%E7%BB%8D/images/selenium%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png">
+<meta property="og:image" content="https://tmh.qpedu.cf/blog/2021/01/26/selenium%E7%9A%84%E4%BB%8B%E7%BB%8D/images/%E6%9F%A5%E7%9C%8Bchrome%E7%89%88%E6%9C%AC.png">
+<meta property="og:image" content="https://tmh.qpedu.cf/blog/2021/01/26/selenium%E7%9A%84%E4%BB%8B%E7%BB%8D/images/%E6%9F%A5%E7%9C%8Bchrome%E7%89%88%E6%9C%AC2.png">
+<meta property="og:image" content="https://tmh.qpedu.cf/blog/2021/01/26/selenium%E7%9A%84%E4%BB%8B%E7%BB%8D/images/%E4%B8%8B%E8%BD%BDchromedriver-1.png">
+<meta property="og:image" content="https://tmh.qpedu.cf/blog/2021/01/26/selenium%E7%9A%84%E4%BB%8B%E7%BB%8D/images/%E4%B8%8B%E8%BD%BDchromedriver-2.png">
+<meta property="og:image" content="https://tmh.qpedu.cf/blog/2021/01/26/selenium%E7%9A%84%E4%BB%8B%E7%BB%8D/images/%E4%B8%8B%E8%BD%BDchromedriver-3.png">
+<meta property="og:image" content="https://tmh.qpedu.cf/blog/2021/01/26/selenium%E7%9A%84%E4%BB%8B%E7%BB%8D/images/%E4%B8%8B%E8%BD%BDchromedriver-4.png">
+<meta property="article:published_time" content="2021-01-25T16:06:10.000Z">
+<meta property="article:modified_time" content="2021-01-25T16:22:18.308Z">
+<meta property="article:author" content="greenfish">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tmh.qpedu.cf/blog/2021/01/26/selenium%E7%9A%84%E4%BB%8B%E7%BB%8D/images/selenium%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Greenfish's Little Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Greenfish&#39;s Little Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">Welcome to my blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://tmh.qpedu.cf/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-selenium的介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2021/01/26/selenium%E7%9A%84%E4%BB%8B%E7%BB%8D/" class="article-date">
+  <time class="dt-published" datetime="2021-01-25T16:06:10.000Z" itemprop="datePublished">2021-01-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      selenium的介绍
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="selenium的介绍"><a href="#selenium的介绍" class="headerlink" title="selenium的介绍"></a>selenium的介绍</h2><h5 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a>知识点：</h5><ul>
+<li>了解 selenium的工作原理</li>
+<li>了解 selenium以及chromedriver的安装</li>
+<li>掌握 标签对象click点击以及send_keys输入</li>
+</ul>
+<hr>
+<h3 id="1-selenium运行效果展示"><a href="#1-selenium运行效果展示" class="headerlink" title="1. selenium运行效果展示"></a>1. selenium运行效果展示</h3><blockquote>
+<p>Selenium是一个Web的自动化测试工具，最初是为网站自动化测试而开发的，Selenium 可以直接调用浏览器，它支持所有主流的浏览器（包括PhantomJS这些无界面的浏览器），可以接收指令，让浏览器自动加载页面，获取需要的数据，甚至页面截屏等。我们可以使用selenium很容易完成之前编写的爬虫，接下来我们就来看一下selenium的运行效果</p>
+</blockquote>
+<a id="more"></a>
+<h4 id="1-1-chrome浏览器的运行效果"><a href="#1-1-chrome浏览器的运行效果" class="headerlink" title="1.1 chrome浏览器的运行效果"></a>1.1 chrome浏览器的运行效果</h4><blockquote>
+<p>在下载好chromedriver以及安装好selenium模块后，执行下列代码并观察运行的过程</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver </span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果driver没有添加到了环境变量，则需要将driver的绝对路径赋值给executable_path参数</span></span><br><span class="line"><span class="comment"># driver = webdriver.Chrome(executable_path=&#x27;/home/worker/Desktop/driver/chromedriver&#x27;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果driver添加了环境变量则不需要设置executable_path</span></span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 向一个url发起请求</span></span><br><span class="line">driver.get(<span class="string">&quot;http://www.itcast.cn/&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 把网页保存为图片，69版本以上的谷歌浏览器将无法使用截图功能</span></span><br><span class="line"><span class="comment"># driver.save_screenshot(&quot;itcast.png&quot;)</span></span><br><span class="line"></span><br><span class="line">print(driver.title) <span class="comment"># 打印页面的标题</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 退出模拟浏览器</span></span><br><span class="line">driver.quit() <span class="comment"># 一定要退出！不退出会有残留进程！</span></span><br></pre></td></tr></table></figure>
+
+
+<h4 id="1-2-phantomjs无界面浏览器的运行效果"><a href="#1-2-phantomjs无界面浏览器的运行效果" class="headerlink" title="1.2 phantomjs无界面浏览器的运行效果"></a>1.2 phantomjs无界面浏览器的运行效果</h4><blockquote>
+<p>PhantomJS 是一个基于Webkit的“无界面”(headless)浏览器，它会把网站加载到内存并执行页面上的 JavaScript。下载地址：<a target="_blank" rel="noopener" href="http://phantomjs.org/download.html">http://phantomjs.org/download.html</a></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver </span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定driver的绝对路径</span></span><br><span class="line">driver = webdriver.PhantomJS(executable_path=<span class="string">&#x27;/home/worker/Desktop/driver/phantomjs&#x27;</span>) </span><br><span class="line"><span class="comment"># driver = webdriver.Chrome(executable_path=&#x27;/home/worker/Desktop/driver/chromedriver&#x27;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 向一个url发起请求</span></span><br><span class="line">driver.get(<span class="string">&quot;http://www.itcast.cn/&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 把网页保存为图片</span></span><br><span class="line">driver.save_screenshot(<span class="string">&quot;itcast.png&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 退出模拟浏览器</span></span><br><span class="line">driver.quit() <span class="comment"># 一定要退出！不退出会有残留进程！</span></span><br></pre></td></tr></table></figure>
+<h4 id="1-3-观察运行效果"><a href="#1-3-观察运行效果" class="headerlink" title="1.3 观察运行效果"></a>1.3 观察运行效果</h4><ul>
+<li>python代码能够自动的调用谷歌浏览或phantomjs无界面浏览器，控制其自动访问网站</li>
+</ul>
+<h4 id="1-4-无头浏览器与有头浏览器的使用场景"><a href="#1-4-无头浏览器与有头浏览器的使用场景" class="headerlink" title="1.4 无头浏览器与有头浏览器的使用场景"></a>1.4 无头浏览器与有头浏览器的使用场景</h4><ul>
+<li>通常在开发过程中我们需要查看运行过程中的各种情况所以通常使用有头浏览器</li>
+<li>在项目完成进行部署的时候，通常平台采用的系统都是服务器版的操作系统，服务器版的操作系统必须使用无头浏览器才能正常运行</li>
+</ul>
+<h3 id="2-selenium的作用和工作原理"><a href="#2-selenium的作用和工作原理" class="headerlink" title="2. selenium的作用和工作原理"></a>2. selenium的作用和工作原理</h3><blockquote>
+<p>利用浏览器原生的API，封装成一套更加面向对象的Selenium WebDriver API，直接操作浏览器页面里的元素，甚至操作浏览器本身（截屏，窗口大小，启动，关闭，安装插件，配置证书之类的）</p>
+</blockquote>
+<p><img src="./images/selenium%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png" alt="selenium的工作原理"></p>
+<ul>
+<li>webdriver本质是一个web-server，对外提供webapi，其中封装了浏览器的各种功能</li>
+<li>不同的浏览器使用各自不同的webdriver</li>
+</ul>
+<hr>
+<h5 id="知识点：了解-selenium的工作原理"><a href="#知识点：了解-selenium的工作原理" class="headerlink" title="知识点：了解 selenium的工作原理"></a>知识点：了解 selenium的工作原理</h5><hr>
+<h3 id="3-selenium的安装以及简单使用"><a href="#3-selenium的安装以及简单使用" class="headerlink" title="3. selenium的安装以及简单使用"></a>3. selenium的安装以及简单使用</h3><blockquote>
+<p>我们以谷歌浏览器的chromedriver为例</p>
+</blockquote>
+<h4 id="3-1-在python虚拟环境中安装selenium模块"><a href="#3-1-在python虚拟环境中安装selenium模块" class="headerlink" title="3.1 在python虚拟环境中安装selenium模块"></a>3.1 在python虚拟环境中安装selenium模块</h4><p><code>pip/pip3 install selenium</code></p>
+<h4 id="3-2-下载版本符合的webdriver"><a href="#3-2-下载版本符合的webdriver" class="headerlink" title="3.2 下载版本符合的webdriver"></a>3.2 下载版本符合的webdriver</h4><blockquote>
+<p>以chrome谷歌浏览器为例</p>
+</blockquote>
+<ol>
+<li><p>查看谷歌浏览器的版本</p>
+<p><img src="./images/%E6%9F%A5%E7%9C%8Bchrome%E7%89%88%E6%9C%AC.png" alt="查看chrome版本"></p>
+<p>​    <img src="./images/%E6%9F%A5%E7%9C%8Bchrome%E7%89%88%E6%9C%AC2.png" alt="查看chrome版本2"></p>
+</li>
+</ol>
+<ol start="2">
+<li><p>访问<a target="_blank" rel="noopener" href="https://npm.taobao.org/mirrors/chromedriver%EF%BC%8C%E7%82%B9%E5%87%BB%E8%BF%9B%E5%85%A5%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84chromedriver%E4%B8%8B%E8%BD%BD%E9%A1%B5%E9%9D%A2">https://npm.taobao.org/mirrors/chromedriver，点击进入不同版本的chromedriver下载页面</a></p>
+<p><img src="./images/%E4%B8%8B%E8%BD%BDchromedriver-1.png" alt="下载chromedriver-1"></p>
+</li>
+</ol>
+<ol start="3">
+<li><p>点击notes.txt进入版本说明页面</p>
+<p><img src="./images/%E4%B8%8B%E8%BD%BDchromedriver-2.png" alt="下载chromedriver-2"></p>
+</li>
+</ol>
+<ol start="4">
+<li><p>查看chrome和chromedriver匹配的版本</p>
+<p><img src="./images/%E4%B8%8B%E8%BD%BDchromedriver-3.png" alt="下载chromedriver-3"></p>
+</li>
+</ol>
+<ol start="5">
+<li><p>根据操作系统下载正确版本的chromedriver</p>
+<p><img src="./images/%E4%B8%8B%E8%BD%BDchromedriver-4.png" alt="下载chromedriver-4"></p>
+</li>
+<li><p>解压压缩包后获取python代码可以调用的谷歌浏览器的webdriver可执行文件</p>
+<ul>
+<li><p>windows为<code>chromedriver.exe</code></p>
+</li>
+<li><p>linux和macos为<code>chromedriver</code></p>
+</li>
+</ul>
+</li>
+<li><p>chromedriver环境的配置</p>
+<ul>
+<li>windows环境下需要将 chromedriver.exe 所在的目录设置为path环境变量中的路径</li>
+<li>linux/mac环境下，将 chromedriver 所在的目录设置到系统的PATH环境值中</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h5 id="知识点：了解-selenium以及chromedriver的安装"><a href="#知识点：了解-selenium以及chromedriver的安装" class="headerlink" title="知识点：了解 selenium以及chromedriver的安装"></a>知识点：了解 selenium以及chromedriver的安装</h5><hr>
+<h3 id="4-selenium的简单使用"><a href="#4-selenium的简单使用" class="headerlink" title="4.  selenium的简单使用"></a>4.  selenium的简单使用</h3><blockquote>
+<p>接下来我们就通过代码来模拟百度搜索</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过指定chromedriver的路径来实例化driver对象，chromedriver放在当前目录。</span></span><br><span class="line"><span class="comment"># driver = webdriver.Chrome(executable_path=&#x27;./chromedriver&#x27;)</span></span><br><span class="line"><span class="comment"># chromedriver已经添加环境变量</span></span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 控制浏览器访问url地址</span></span><br><span class="line">driver.get(<span class="string">&quot;https://www.baidu.com/&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在百度搜索框中搜索&#x27;python&#x27;</span></span><br><span class="line">driver.find_element_by_id(<span class="string">&#x27;kw&#x27;</span>).send_keys(<span class="string">&#x27;python&#x27;</span>)</span><br><span class="line"><span class="comment"># 点击&#x27;百度搜索&#x27;</span></span><br><span class="line">driver.find_element_by_id(<span class="string">&#x27;su&#x27;</span>).click()</span><br><span class="line"></span><br><span class="line">time.sleep(<span class="number">6</span>)</span><br><span class="line"><span class="comment"># 退出浏览器</span></span><br><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>webdriver.Chrome(executable_path=&#39;./chromedriver&#39;)</code>中executable参数指定的是下载好的chromedriver文件的路径</li>
+<li><code>driver.find_element_by_id(&#39;kw&#39;).send_keys(&#39;python&#39;)</code>定位id属性值是’kw’的标签，并向其中输入字符串’python’</li>
+<li><code>driver.find_element_by_id(&#39;su&#39;).click()</code>定位id属性值是su的标签，并点击<ul>
+<li>click函数作用是：触发标签的js的click事件</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="知识点：掌握-标签对象click点击以及send-keys输入"><a href="#知识点：掌握-标签对象click点击以及send-keys输入" class="headerlink" title="知识点：掌握 标签对象click点击以及send_keys输入"></a>知识点：掌握 标签对象click点击以及send_keys输入</h5><hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tmh.qpedu.cf/blog/2021/01/26/selenium%E7%9A%84%E4%BB%8B%E7%BB%8D/" data-id="ckmp2dnmw00048aj062u55tqh" data-title="selenium的介绍" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2021/01/26/selenium%E5%AE%9A%E4%BD%8D%E8%8E%B7%E5%8F%96%E6%A0%87%E7%AD%BE%E5%AF%B9%E8%B1%A1%E5%B9%B6%E6%8F%90%E5%8F%96%E6%95%B0%E6%8D%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          selenium定位元素
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2021/01/17/docker%E7%BD%91%E7%BB%9C/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">docker网络</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2021/03/25/excel%E8%AE%A1%E7%AE%97%E5%B9%B4%E9%BE%84/">excel计算年龄</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2021/01/26/selenium%E7%9A%84%E5%85%B6%E5%AE%83%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">selenium的其它使用方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2021/01/26/selenium%E5%AE%9A%E4%BD%8D%E8%8E%B7%E5%8F%96%E6%A0%87%E7%AD%BE%E5%AF%B9%E8%B1%A1%E5%B9%B6%E6%8F%90%E5%8F%96%E6%95%B0%E6%8D%AE/">selenium定位元素</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2021/01/26/selenium%E7%9A%84%E4%BB%8B%E7%BB%8D/">selenium的介绍</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2021/01/17/docker%E7%BD%91%E7%BB%9C/">docker网络</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 greenfish<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

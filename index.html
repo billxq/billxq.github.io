@@ -9,17 +9,17 @@
   <meta name="description" content="My little learning log">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Greenfish&#39;s Little Blog">
-<meta property="og:url" content="https://tmh.qpedu.cf/index.html">
+<meta property="og:url" content="https://tmh.qpedu.cf/blog/index.html">
 <meta property="og:site_name" content="Greenfish&#39;s Little Blog">
 <meta property="og:description" content="My little learning log">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="greenfish">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="Greenfish's Little Blog" type="application/atom+xml">
+    <link rel="alternate" href="/blog/atom.xml" title="Greenfish's Little Blog" type="application/atom+xml">
   
   
-    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="shortcut icon" href="/blog/favicon.png">
   
   
     
@@ -27,11 +27,11 @@
 
   
   
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/blog/css/style.css">
 
   
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
 
   
 <meta name="generator" content="Hexo 5.3.0"></head>
@@ -44,11 +44,11 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Greenfish&#39;s Little Blog</a>
+        <a href="/blog/" id="logo">Greenfish&#39;s Little Blog</a>
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">Welcome to my blog</a>
+          <a href="/blog/" id="subtitle">Welcome to my blog</a>
         </h2>
       
     </div>
@@ -56,19 +56,19 @@
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"></a>
         
-          <a class="main-nav-link" href="/">Home</a>
+          <a class="main-nav-link" href="/blog/">Home</a>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
         
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
         
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://tmh.qpedu.cf"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://tmh.qpedu.cf/blog"></form>
       </div>
     </div>
   </div>
@@ -77,9 +77,244 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-excel计算年龄" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2021/03/25/excel%E8%AE%A1%E7%AE%97%E5%B9%B4%E9%BE%84/" class="article-date">
+  <time class="dt-published" datetime="2021-03-25T15:15:32.000Z" itemprop="datePublished">2021-03-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2021/03/25/excel%E8%AE%A1%E7%AE%97%E5%B9%B4%E9%BE%84/">excel计算年龄</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>近期在工作中经常遇到通过一个身份证来计算年龄的问题，于是深入研究了一下excel的几个关于日期的函数，year(), date(), today(), mid(), datedif()。现总结如下：</p>
+</blockquote>
+<p>[toc]</p>
+<h3 id="初步了解一下以上几个函数"><a href="#初步了解一下以上几个函数" class="headerlink" title="初步了解一下以上几个函数"></a>初步了解一下以上几个函数</h3><h4 id="year-函数"><a href="#year-函数" class="headerlink" title="year()函数"></a>year()函数</h4><p>返回对应某个日期的年份</p>
+<p>例如：year(“2021/1/22”) 返回2021</p>
+<h4 id="date-函数"><a href="#date-函数" class="headerlink" title="date()函数"></a>date()函数</h4><p>date函数返回表示特定日期的连续序列号</p>
+<p>例如： date(“2021”, “1”, “22”) 返回： ”2021/1/22“</p>
+<h4 id="today-函数"><a href="#today-函数" class="headerlink" title="today()函数"></a>today()函数</h4><p>返回今天的日期， 形如： ”2021/3/25“</p>
+<h4 id="mid-函数"><a href="#mid-函数" class="headerlink" title="mid()函数"></a>mid()函数</h4><p>返回文本字符串中从指定位置开始的特定数目的字符，该数目由用户指定。</p>
+<p>syntax:</p>
+<ul>
+<li><p>MID(text, start, num_chars)</p>
+<ul>
+<li><p>text 文本内容，必需，如身份证号码：310229198502260820</p>
+</li>
+<li><p>start 需要提取的起始位置，出生年份是第7个</p>
+</li>
+<li><p>num_chars 需要提取多少个字符，从年份到日期共8位</p>
+<p>因此从身份证提取出生年月就可以写成： <code>=MID(&quot;310229198502260820&quot;, 7, 8)</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="datedif-函数"><a href="#datedif-函数" class="headerlink" title="datedif()函数"></a>datedif()函数</h4><p>计算两个日期之间相隔的天数，月数或年数。</p>
+<p>syntax:</p>
+<p>​    DATEDIF(start_date, end_date, unit)</p>
+<pre><code>        - start_date: 给定一个其实日期，例如：&quot;2021/1/30&quot;
+        - end_date: 给定一个结束日期，例如： ”2023/2/11“</code></pre>
+<ul>
+<li>unit: 指定需要返回的信息类型<pre><code>        - Y： 返回整年数
+             - M： 返回整月数
+             - D:  返回一段时期内的天数，比较常用</code></pre>
+</li>
+</ul>
+<h4 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h4><p><img src="./images/example.png" alt="example"></p>
+<p>如图通过以上函数，计算出年龄。</p>
+<p>在B2单元格中写入：</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">=<span class="built_in">DATEDIF</span>(<span class="built_in">DATE</span>(<span class="built_in">MID</span>(<span class="symbol">A2</span>,<span class="number">7</span>,<span class="number">4</span>), <span class="built_in">MID</span>(<span class="symbol">A2</span>,<span class="number">11</span>,<span class="number">2</span>),<span class="built_in">MID</span>(<span class="symbol">A2</span>,<span class="number">13</span>,<span class="number">2</span>)),<span class="built_in">TODAY</span>(),<span class="string">&quot;Y&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>如图：</p>
+<p><img src="./images/%E5%85%AC%E5%BC%8F.png" alt="公式"></p>
+<p>得出结果:</p>
+<p><img src="./images/one.png" alt="one"></p>
+<p>然后将B2单元格向下拖拽，得到所有人的年龄，大功告成</p>
+<p><img src="./images/all.png" alt="all"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tmh.qpedu.cf/blog/2021/03/25/excel%E8%AE%A1%E7%AE%97%E5%B9%B4%E9%BE%84/" data-id="ckmp2dnkx00018aj071xd23fd" data-title="excel计算年龄" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-selenium的其它使用方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2021/01/26/selenium%E7%9A%84%E5%85%B6%E5%AE%83%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2021-01-25T16:07:10.000Z" itemprop="datePublished">2021-01-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2021/01/26/selenium%E7%9A%84%E5%85%B6%E5%AE%83%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">selenium的其它使用方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="selenium的其它使用方法"><a href="#selenium的其它使用方法" class="headerlink" title="selenium的其它使用方法"></a>selenium的其它使用方法</h2><h5 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a>知识点：</h5><ul>
+<li>掌握 selenium控制标签页的切换</li>
+<li>掌握 selenium控制iframe的切换</li>
+<li>掌握 利用selenium获取cookie的方法</li>
+<li>掌握 手动实现页面等待</li>
+<li>掌握 selenium控制浏览器执行js代码的方法</li>
+<li>掌握 selenium开启无界面模式</li>
+<li>了解 selenium使用代理ip</li>
+<li>了解 selenium替换user-agent</li>
+</ul>
+<hr>
+        
+          <p class="article-more-link">
+            <a href="/blog/2021/01/26/selenium%E7%9A%84%E5%85%B6%E5%AE%83%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tmh.qpedu.cf/blog/2021/01/26/selenium%E7%9A%84%E5%85%B6%E5%AE%83%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" data-id="ckmp2dnn000058aj04x2lcrh9" data-title="selenium的其它使用方法" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-selenium定位获取标签对象并提取数据" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2021/01/26/selenium%E5%AE%9A%E4%BD%8D%E8%8E%B7%E5%8F%96%E6%A0%87%E7%AD%BE%E5%AF%B9%E8%B1%A1%E5%B9%B6%E6%8F%90%E5%8F%96%E6%95%B0%E6%8D%AE/" class="article-date">
+  <time class="dt-published" datetime="2021-01-25T16:06:10.000Z" itemprop="datePublished">2021-01-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2021/01/26/selenium%E5%AE%9A%E4%BD%8D%E8%8E%B7%E5%8F%96%E6%A0%87%E7%AD%BE%E5%AF%B9%E8%B1%A1%E5%B9%B6%E6%8F%90%E5%8F%96%E6%95%B0%E6%8D%AE/">selenium定位元素</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="selenium提取数据"><a href="#selenium提取数据" class="headerlink" title="selenium提取数据"></a>selenium提取数据</h2><h5 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a>知识点：</h5><ul>
+<li>了解 driver对象的常用属性和方法</li>
+<li>掌握 driver对象定位标签元素获取标签对象的方法</li>
+<li>掌握 标签对象提取文本和属性值的方法</li>
+</ul>
+<hr>
+        
+          <p class="article-more-link">
+            <a href="/blog/2021/01/26/selenium%E5%AE%9A%E4%BD%8D%E8%8E%B7%E5%8F%96%E6%A0%87%E7%AD%BE%E5%AF%B9%E8%B1%A1%E5%B9%B6%E6%8F%90%E5%8F%96%E6%95%B0%E6%8D%AE/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tmh.qpedu.cf/blog/2021/01/26/selenium%E5%AE%9A%E4%BD%8D%E8%8E%B7%E5%8F%96%E6%A0%87%E7%AD%BE%E5%AF%B9%E8%B1%A1%E5%B9%B6%E6%8F%90%E5%8F%96%E6%95%B0%E6%8D%AE/" data-id="ckmp2dnmp00038aj00l05adhy" data-title="selenium定位元素" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-selenium的介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2021/01/26/selenium%E7%9A%84%E4%BB%8B%E7%BB%8D/" class="article-date">
+  <time class="dt-published" datetime="2021-01-25T16:06:10.000Z" itemprop="datePublished">2021-01-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2021/01/26/selenium%E7%9A%84%E4%BB%8B%E7%BB%8D/">selenium的介绍</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="selenium的介绍"><a href="#selenium的介绍" class="headerlink" title="selenium的介绍"></a>selenium的介绍</h2><h5 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a>知识点：</h5><ul>
+<li>了解 selenium的工作原理</li>
+<li>了解 selenium以及chromedriver的安装</li>
+<li>掌握 标签对象click点击以及send_keys输入</li>
+</ul>
+<hr>
+<h3 id="1-selenium运行效果展示"><a href="#1-selenium运行效果展示" class="headerlink" title="1. selenium运行效果展示"></a>1. selenium运行效果展示</h3><blockquote>
+<p>Selenium是一个Web的自动化测试工具，最初是为网站自动化测试而开发的，Selenium 可以直接调用浏览器，它支持所有主流的浏览器（包括PhantomJS这些无界面的浏览器），可以接收指令，让浏览器自动加载页面，获取需要的数据，甚至页面截屏等。我们可以使用selenium很容易完成之前编写的爬虫，接下来我们就来看一下selenium的运行效果</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/blog/2021/01/26/selenium%E7%9A%84%E4%BB%8B%E7%BB%8D/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tmh.qpedu.cf/blog/2021/01/26/selenium%E7%9A%84%E4%BB%8B%E7%BB%8D/" data-id="ckmp2dnmw00048aj062u55tqh" data-title="selenium的介绍" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-docker网络" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/01/17/docker%E7%BD%91%E7%BB%9C/" class="article-date">
+    <a href="/blog/2021/01/17/docker%E7%BD%91%E7%BB%9C/" class="article-date">
   <time class="dt-published" datetime="2021-01-17T15:36:22.000Z" itemprop="datePublished">2021-01-17</time>
 </a>
     
@@ -91,7 +326,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/17/docker%E7%BD%91%E7%BB%9C/">docker网络</a>
+      <a class="p-name article-title" href="/blog/2021/01/17/docker%E7%BD%91%E7%BB%9C/">docker网络</a>
     </h1>
   
 
@@ -107,7 +342,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tmh.qpedu.cf/2021/01/17/docker%E7%BD%91%E7%BB%9C/" data-id="ckk2qh38o0000nqj0e8hh1bdc" data-title="docker网络" class="article-share-link">Share</a>
+      <a data-url="https://tmh.qpedu.cf/blog/2021/01/17/docker%E7%BD%91%E7%BB%9C/" data-id="ckmp2dnk700008aj02s1q5ztw" data-title="docker网络" class="article-share-link">Share</a>
       
       
       
@@ -121,7 +356,7 @@
   
     <article id="post-test" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/01/15/test/" class="article-date">
+    <a href="/blog/2021/01/15/test/" class="article-date">
   <time class="dt-published" datetime="2021-01-15T06:56:23.000Z" itemprop="datePublished">2021-01-15</time>
 </a>
     
@@ -133,7 +368,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/15/test/">test</a>
+      <a class="p-name article-title" href="/blog/2021/01/15/test/">test</a>
     </h1>
   
 
@@ -148,7 +383,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tmh.qpedu.cf/2021/01/15/test/" data-id="ckk2qh3980002nqj0f0l94x2k" data-title="test" class="article-share-link">Share</a>
+      <a data-url="https://tmh.qpedu.cf/blog/2021/01/15/test/" data-id="ckmp2dnn400068aj09psp8a5r" data-title="test" class="article-share-link">Share</a>
       
       
       
@@ -162,7 +397,7 @@
   
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/01/15/hello-world/" class="article-date">
+    <a href="/blog/2021/01/15/hello-world/" class="article-date">
   <time class="dt-published" datetime="2021-01-15T06:47:17.986Z" itemprop="datePublished">2021-01-15</time>
 </a>
     
@@ -174,7 +409,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/15/hello-world/">Hello World</a>
+      <a class="p-name article-title" href="/blog/2021/01/15/hello-world/">Hello World</a>
     </h1>
   
 
@@ -195,7 +430,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tmh.qpedu.cf/2021/01/15/hello-world/" data-id="ckk2qh3920001nqj05mic7783" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="https://tmh.qpedu.cf/blog/2021/01/15/hello-world/" data-id="ckmp2dnmj00028aj0avzs9hao" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -225,7 +460,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a></li></ul>
     </div>
   </div>
 
@@ -238,15 +473,23 @@
       <ul>
         
           <li>
-            <a href="/2021/01/17/docker%E7%BD%91%E7%BB%9C/">docker网络</a>
+            <a href="/blog/2021/03/25/excel%E8%AE%A1%E7%AE%97%E5%B9%B4%E9%BE%84/">excel计算年龄</a>
           </li>
         
           <li>
-            <a href="/2021/01/15/test/">test</a>
+            <a href="/blog/2021/01/26/selenium%E7%9A%84%E5%85%B6%E5%AE%83%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">selenium的其它使用方法</a>
           </li>
         
           <li>
-            <a href="/2021/01/15/hello-world/">Hello World</a>
+            <a href="/blog/2021/01/26/selenium%E5%AE%9A%E4%BD%8D%E8%8E%B7%E5%8F%96%E6%A0%87%E7%AD%BE%E5%AF%B9%E8%B1%A1%E5%B9%B6%E6%8F%90%E5%8F%96%E6%95%B0%E6%8D%AE/">selenium定位元素</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2021/01/26/selenium%E7%9A%84%E4%BB%8B%E7%BB%8D/">selenium的介绍</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2021/01/17/docker%E7%BD%91%E7%BB%9C/">docker网络</a>
           </li>
         
       </ul>
@@ -271,25 +514,25 @@
     </div>
     <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/blog/" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
   
 </nav>
     
 
 
-<script src="/js/jquery-3.4.1.min.js"></script>
+<script src="/blog/js/jquery-3.4.1.min.js"></script>
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
 
 
 
 
-<script src="/js/script.js"></script>
+<script src="/blog/js/script.js"></script>
 
 
 
